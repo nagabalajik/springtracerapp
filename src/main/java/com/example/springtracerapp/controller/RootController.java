@@ -19,8 +19,9 @@ public class RootController {
     public String one(){
         return "Response from One";
     }
+
     @GetMapping("/resttemplate")
-    public ResponseEntity<String> two(){
+    public ResponseEntity<String> getFromRestTemplate(){
         return new ResponseEntity<String>(rootService.getUsingRestTemplate(), HttpStatus.OK);
     }
 }
