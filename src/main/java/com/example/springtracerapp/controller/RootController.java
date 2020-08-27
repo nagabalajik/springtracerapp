@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.springtracerapp.service.RootService;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 
 @RestController
 public class RootController {
@@ -23,5 +24,10 @@ public class RootController {
     @GetMapping("/resttemplate")
     public ResponseEntity<String> getFromRestTemplate(){
         return new ResponseEntity<String>(rootService.getUsingRestTemplate(), HttpStatus.OK);
+    }
+
+    @GetMapping("/okhttp")
+    public ResponseEntity<String> getFromOkhttp() throws IOException {
+        return new ResponseEntity<String>(rootService.getUsingOkhttp(), HttpStatus.OK);
     }
 }

@@ -1,5 +1,8 @@
 package com.example.springtracerapp;
 
+import io.opentracing.Tracer;
+import io.opentracing.contrib.okhttp3.TracingCallFactory;
+import okhttp3.OkHttpClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -17,5 +20,4 @@ public class SpringtracerappApplication {
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
-
 }
